@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Track</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Smooth scroll when clicking on anchor links
+        document.addEventListener("DOMContentLoaded", function() {
+            var anchorLinks = document.querySelectorAll('a[href^="#"]');
+            var menuHeight = 90; // Adjust this value based on your menu's height
+
+            for (var i = 0; i < anchorLinks.length; i++) {
+                anchorLinks[i].addEventListener("click", function(e) {
+                    e.preventDefault();
+                    var targetElement = document.querySelector(this.getAttribute("href"));
+
+                    // Calculate the target scroll position by subtracting the menu height
+                    var scrollPosition = targetElement.offsetTop - menuHeight;
+
+                    // Scroll to the target position
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: "smooth"
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav></nav>
+    <section></section>
+    <footer></footer>
+</body>
+</html>
